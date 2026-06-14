@@ -1,7 +1,7 @@
 # YStack — Agent Skills Repository
 
 ## Project Overview
-This repo contains Claude agent skills for non-technical users. Skills install on the local Claude desktop app or run in Claude Cowork. See `CONTEXT.md` for full project context.
+This is a personal collection of Claude agent skills covering any purpose or audience — productivity tools, SWE utilities, games, or anything else. Skills install on the local Claude desktop app or run in Claude Cowork. See `CONTEXT.md` for full project context.
 
 ## Skill File Structure
 Each skill lives in its own subdirectory under `skills/` and contains a single `SKILL.md`:
@@ -27,10 +27,8 @@ All grilling sessions ask one question at a time. Never produce a list of questi
 ### Consolidated workflows
 Prefer one skill with phases over multiple skills the user has to invoke separately.
 
-### Non-technical audience
-- No jargon in user-facing content
-- Translate technical terms into outcomes
-- Assume the user is not a developer
+### Audience varies by skill
+Each skill targets its own audience. Check the skill's description and tone guidelines — some are non-technical (e.g. `xlsx-cowork`), others are SWE-facing (e.g. `swe-pattern-rec-game`). Don't assume a universal audience.
 
 ## When Adding a New Skill
 1. Create `skills/<skill-name>/SKILL.md`
