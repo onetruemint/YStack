@@ -1,12 +1,15 @@
 # CONTEXT.md — YStack Agent Skills
+
 _Last updated: 2026-06-13_
 _Version: 2_
 
 ## Project Purpose
+
 YStack is a personal collection of Claude agent skills. Skills cover any purpose or audience — productivity tools for non-technical users, SWE utilities, games, and anything else. There is no common theme requirement. Skills install on the local Claude desktop app or run in Claude Cowork.
 
 ## Repository Structure
-```
+
+```markdown
 agent-skills/
 ├── skills/
 │   ├── agent-picker/
@@ -27,6 +30,7 @@ Skills are stored flat under `skills/`. If skills with a strong common theme acc
 ## Skills
 
 ### agent-picker
+
 | Field | Detail |
 |-------|--------|
 | Audience | Non-technical users |
@@ -37,6 +41,7 @@ Skills are stored flat under `skills/`. If skills with a strong common theme acc
 | Session end | Hard close — no follow-up questions |
 
 ### xlsx-cowork
+
 | Field | Detail |
 |-------|--------|
 | Audience | Non-technical users |
@@ -48,6 +53,7 @@ Skills are stored flat under `skills/`. If skills with a strong common theme acc
 | Key constraint | Orchestrator never modifies the Excel file; subagent handles all writes |
 
 ### swe-pattern-rec-game
+
 | Field | Detail |
 |-------|--------|
 | Audience | Software engineers (interview prep) |
@@ -60,18 +66,23 @@ Skills are stored flat under `skills/`. If skills with a strong common theme acc
 ## Design Conventions
 
 ### One question at a time
+
 Skills that use a grilling or setup phase ask one question at a time. Never ask multiple questions in a single message during a grilling session.
 
 ### Token efficiency
+
 Skills are designed to be lightweight. Subagents receive only the minimum context needed — no conversation history. Documents (CONTEXT.md, PLAN.md) are made self-contained so history doesn't need to be passed.
 
 ### Consolidated workflows
+
 Prefer a single skill with multiple phases over splitting into separate skills. The old `mod-xslx` approach (4 separate skills) was replaced by `xlsx-cowork` (one skill, one entry point) for this reason.
 
 ### Audience varies by skill
+
 Each skill defines its own audience and tone. Non-technical skills avoid jargon; SWE-facing skills can assume developer context. Check the individual SKILL.md for tone guidance.
 
 ## Changelog
+
 | Version | Date | Changes |
 |---------|------|---------|
 | 2 | 2026-06-13 | Broadened repo purpose to all-encompassing personal collection; added swe-pattern-rec-game |
